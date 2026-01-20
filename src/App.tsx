@@ -57,8 +57,9 @@ export const App = () => {
       return;
     }
 
-    const maxId = Math.max(...todos.map(todo => todo.id));
-    const user = usersFromServer.find(u => u.id === userId);
+    const maxId =
+      todos.length > 0 ? Math.max(...todos.map(todo => todo.id)) : 0;
+    const user = usersFromServer.find(person => person.id === userId);
 
     if (!user) {
       return;
